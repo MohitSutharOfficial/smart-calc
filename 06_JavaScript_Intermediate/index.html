@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Intermediate - WebDev Learning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>JavaScript Intermediate</h1>
+            <p>Learn advanced JavaScript concepts and techniques</p>
+        </header>
+
+        <main>
+            <!-- Arrays and Objects Section -->
+            <section class="demo-section">
+                <h2>Arrays and Objects</h2>
+                <div class="demo-area">
+                    <h3>Array Methods Demo</h3>
+                    <button id="arrayDemo">Test Array Methods</button>
+                    <div id="arrayResults" class="results"></div>
+                </div>
+
+                <div class="demo-area">
+                    <h3>Object Manipulation</h3>
+                    <button id="objectDemo">Test Object Methods</button>
+                    <div id="objectResults" class="results"></div>
+                </div>
+            </section>
+
+            <!-- Loops Section -->
+            <section class="demo-section">
+                <h2>Advanced Loops</h2>
+                <div class="demo-area">
+                    <h3>Loop Types Demo</h3>
+                    <button id="loopDemo">Test Different Loops</button>
+                    <div id="loopResults" class="results"></div>
+                </div>
+            </section>
+
+            <!-- DOM Manipulation Section -->
+            <section class="demo-section">
+                <h2>Advanced DOM Manipulation</h2>
+                <div class="demo-area">
+                    <h3>Dynamic Content</h3>
+                    <button id="addItem">Add Item</button>
+                    <button id="removeItem">Remove Item</button>
+                    <button id="clearAll">Clear All</button>
+                    <ul id="dynamicList"></ul>
+                </div>
+            </section>
+
+            <!-- Event Handling Section -->
+            <section class="demo-section">
+                <h2>Advanced Event Handling</h2>
+                <div class="demo-area">
+                    <h3>Event Delegation</h3>
+                    <div id="eventContainer">
+                        <button class="event-btn">Button 1</button>
+                        <button class="event-btn">Button 2</button>
+                        <button class="event-btn">Button 3</button>
+                    </div>
+                    <button id="addEventBtn">Add New Button</button>
+                    <div id="eventResults" class="results"></div>
+                </div>
+            </section>
+
+            <!-- Error Handling Section -->
+            <section class="demo-section">
+                <h2>Error Handling</h2>
+                <div class="demo-area">
+                    <h3>Try-Catch Demo</h3>
+                    <button id="errorDemo">Test Error Handling</button>
+                    <div id="errorResults" class="results"></div>
+                </div>
+            </section>
+
+            <!-- Async JavaScript Section -->
+            <section class="demo-section">
+                <h2>Asynchronous JavaScript</h2>
+                <div class="demo-area">
+                    <h3>Promises and Async/Await</h3>
+                    <button id="promiseDemo">Test Promises</button>
+                    <button id="asyncDemo">Test Async/Await</button>
+                    <div id="asyncResults" class="results"></div>
+                </div>
+            </section>
+
+            <!-- Local Storage Section -->
+            <section class="demo-section">
+                <h2>Local Storage</h2>
+                <div class="demo-area">
+                    <h3>Data Persistence</h3>
+                    <input type="text" id="storageInput" placeholder="Enter some text">
+                    <button id="saveData">Save to Storage</button>
+                    <button id="loadData">Load from Storage</button>
+                    <button id="clearStorage">Clear Storage</button>
+                    <div id="storageResults" class="results"></div>
+                </div>
+            </section>
+
+            <!-- Form Validation Section -->
+            <section class="demo-section">
+                <h2>Advanced Form Validation</h2>
+                <div class="demo-area">
+                    <h3>Custom Validation</h3>
+                    <form id="advancedForm">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" required>
+                            <span class="error-message" id="passwordError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password:</label>
+                            <input type="password" id="confirmPassword" required>
+                            <span class="error-message" id="confirmPasswordError"></span>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 WebDev Learning - JavaScript Intermediate</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

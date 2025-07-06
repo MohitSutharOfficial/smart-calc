@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator - Final Project</title>
+    <meta name="description" content="A comprehensive calculator with standard, scientific, and programming modes">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+</head>
+
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" class="skip-link">Skip to calculator</a>
+
+    <!-- Main Calculator Container -->
+    <div class="calculator-container" id="calculatorContainer">
+        <!-- Header Section -->
+        <header class="calculator-header">
+            <h1 class="calculator-title">
+                <span class="title-icon">🧮</span>
+                Advanced Calculator
+            </h1>
+            <div class="header-controls">
+                <div class="mode-selector">
+                    <button class="mode-btn active" data-mode="standard" aria-label="Standard calculator mode">
+                        Standard
+                    </button>
+                    <button class="mode-btn" data-mode="scientific" aria-label="Scientific calculator mode">
+                        Scientific
+                    </button>
+                    <button class="mode-btn" data-mode="programming" aria-label="Programming calculator mode">
+                        Programming
+                    </button>
+                </div>
+                <div class="utility-controls">
+                    <button class="utility-btn" id="historyBtn" aria-label="View calculation history">
+                        📋 History
+                    </button>
+                    <button class="utility-btn" id="themeBtn" aria-label="Change calculator theme">
+                        🎨 Theme
+                    </button>
+                    <button class="utility-btn" id="helpBtn" aria-label="Show keyboard shortcuts">
+                        ❓ Help
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Calculator Interface -->
+        <main class="calculator-main" id="main">
+            <!-- Display Section -->
+            <section class="display-section" aria-label="Calculator display">
+                <div class="display-container">
+                    <div class="display-secondary" id="displaySecondary" aria-label="Previous calculation">
+                        <!-- Previous calculation or operation -->
+                    </div>
+                    <div class="display-primary" id="displayPrimary" aria-label="Current value" aria-live="polite">
+                        0
+                    </div>
+                    <div class="display-status">
+                        <span class="memory-indicator" id="memoryIndicator" aria-label="Memory status">M</span>
+                        <span class="angle-mode" id="angleMode" aria-label="Angle mode">DEG</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Memory and Quick Functions Bar -->
+            <section class="memory-bar" id="memoryBar" aria-label="Memory functions">
+                <button class="memory-btn" data-action="memory-clear" aria-label="Clear memory">MC</button>
+                <button class="memory-btn" data-action="memory-recall" aria-label="Recall memory">MR</button>
+                <button class="memory-btn" data-action="memory-add" aria-label="Add to memory">M+</button>
+                <button class="memory-btn" data-action="memory-subtract" aria-label="Subtract from memory">M-</button>
+                <button class="memory-btn" data-action="memory-store" aria-label="Store in memory">MS</button>
+            </section>
+
+            <!-- Calculator Keypad -->
+            <section class="keypad" id="keypad" aria-label="Calculator buttons">
+                <!-- Standard Mode Buttons -->
+                <div class="button-grid standard-grid" id="standardGrid">
+                    <!-- Row 1: Clear and Backspace -->
+                    <button class="calc-btn clear-btn" data-action="clear-all" aria-label="Clear all">C</button>
+                    <button class="calc-btn clear-btn" data-action="clear-entry" aria-label="Clear entry">CE</button>
+                    <button class="calc-btn clear-btn" data-action="backspace" aria-label="Backspace">⌫</button>
+                    <button class="calc-btn operator-btn" data-action="divide" aria-label="Divide">÷</button>
+
+                    <!-- Row 2: 7, 8, 9, multiply -->
+                    <button class="calc-btn number-btn" data-number="7" aria-label="Seven">7</button>
+                    <button class="calc-btn number-btn" data-number="8" aria-label="Eight">8</button>
+                    <button class="calc-btn number-btn" data-number="9" aria-label="Nine">9</button>
+                    <button class="calc-btn operator-btn" data-action="multiply" aria-label="Multiply">×</button>
+
+                    <!-- Row 3: 4, 5, 6, subtract -->
+                    <button class="calc-btn number-btn" data-number="4" aria-label="Four">4</button>
+                    <button class="calc-btn number-btn" data-number="5" aria-label="Five">5</button>
+                    <button class="calc-btn number-btn" data-number="6" aria-label="Six">6</button>
+                    <button class="calc-btn operator-btn" data-action="subtract" aria-label="Subtract">−</button>
+
+                    <!-- Row 4: 1, 2, 3, add -->
+                    <button class="calc-btn number-btn" data-number="1" aria-label="One">1</button>
+                    <button class="calc-btn number-btn" data-number="2" aria-label="Two">2</button>
+                    <button class="calc-btn number-btn" data-number="3" aria-label="Three">3</button>
+                    <button class="calc-btn operator-btn" data-action="add" aria-label="Add">+</button>
+
+                    <!-- Row 5: 0, decimal, equals -->
+                    <button class="calc-btn number-btn zero-btn" data-number="0" aria-label="Zero">0</button>
+                    <button class="calc-btn decimal-btn" data-action="decimal" aria-label="Decimal point">.</button>
+                    <button class="calc-btn equals-btn" data-action="equals" aria-label="Equals">=</button>
+                </div>
+
+                <!-- Scientific Mode Additional Buttons -->
+                <div class="button-grid scientific-grid hidden" id="scientificGrid">
+                    <!-- Scientific Functions Row 1 -->
+                    <button class="calc-btn function-btn" data-action="sin" aria-label="Sine">sin</button>
+                    <button class="calc-btn function-btn" data-action="cos" aria-label="Cosine">cos</button>
+                    <button class="calc-btn function-btn" data-action="tan" aria-label="Tangent">tan</button>
+                    <button class="calc-btn function-btn" data-action="log" aria-label="Logarithm">log</button>
+
+                    <!-- Scientific Functions Row 2 -->
+                    <button class="calc-btn function-btn" data-action="asin" aria-label="Arc sine">asin</button>
+                    <button class="calc-btn function-btn" data-action="acos" aria-label="Arc cosine">acos</button>
+                    <button class="calc-btn function-btn" data-action="atan" aria-label="Arc tangent">atan</button>
+                    <button class="calc-btn function-btn" data-action="ln" aria-label="Natural logarithm">ln</button>
+
+                    <!-- Powers and Roots -->
+                    <button class="calc-btn function-btn" data-action="square" aria-label="Square">x²</button>
+                    <button class="calc-btn function-btn" data-action="cube" aria-label="Cube">x³</button>
+                    <button class="calc-btn function-btn" data-action="power" aria-label="Power">xʸ</button>
+                    <button class="calc-btn function-btn" data-action="sqrt" aria-label="Square root">√</button>
+
+                    <!-- Constants and Special Functions -->
+                    <button class="calc-btn function-btn" data-action="pi" aria-label="Pi">π</button>
+                    <button class="calc-btn function-btn" data-action="e" aria-label="Euler's number">e</button>
+                    <button class="calc-btn function-btn" data-action="factorial" aria-label="Factorial">n!</button>
+                    <button class="calc-btn function-btn" data-action="percent" aria-label="Percent">%</button>
+                </div>
+
+                <!-- Programming Mode Buttons -->
+                <div class="button-grid programming-grid hidden" id="programmingGrid">
+                    <!-- Number Base Selector -->
+                    <div class="base-selector">
+                        <button class="base-btn active" data-base="10" aria-label="Decimal">DEC</button>
+                        <button class="base-btn" data-base="16" aria-label="Hexadecimal">HEX</button>
+                        <button class="base-btn" data-base="8" aria-label="Octal">OCT</button>
+                        <button class="base-btn" data-base="2" aria-label="Binary">BIN</button>
+                    </div>
+
+                    <!-- Hexadecimal Letters -->
+                    <button class="calc-btn hex-btn" data-number="A" aria-label="A">A</button>
+                    <button class="calc-btn hex-btn" data-number="B" aria-label="B">B</button>
+                    <button class="calc-btn hex-btn" data-number="C" aria-label="C">C</button>
+                    <button class="calc-btn hex-btn" data-number="D" aria-label="D">D</button>
+                    <button class="calc-btn hex-btn" data-number="E" aria-label="E">E</button>
+                    <button class="calc-btn hex-btn" data-number="F" aria-label="F">F</button>
+
+                    <!-- Bitwise Operations -->
+                    <button class="calc-btn operator-btn" data-action="and" aria-label="Bitwise AND">AND</button>
+                    <button class="calc-btn operator-btn" data-action="or" aria-label="Bitwise OR">OR</button>
+                    <button class="calc-btn operator-btn" data-action="xor" aria-label="Bitwise XOR">XOR</button>
+                    <button class="calc-btn operator-btn" data-action="not" aria-label="Bitwise NOT">NOT</button>
+
+                    <!-- Bit Shifts -->
+                    <button class="calc-btn operator-btn" data-action="lshift" aria-label="Left shift">
+                        <<< /button>
+                            <button class="calc-btn operator-btn" data-action="rshift"
+                                aria-label="Right shift">>></button>
+                </div>
+            </section>
+        </main>
+
+        <!-- History Panel -->
+        <aside class="history-panel hidden" id="historyPanel" aria-label="Calculation history">
+            <div class="history-header">
+                <h2>History</h2>
+                <div class="history-controls">
+                    <button class="history-control-btn" id="clearHistoryBtn" aria-label="Clear history">
+                        🗑️ Clear
+                    </button>
+                    <button class="history-control-btn" id="closeHistoryBtn" aria-label="Close history">
+                        ✕
+                    </button>
+                </div>
+            </div>
+            <div class="history-search">
+                <input type="text" id="historySearch" placeholder="Search calculations..." aria-label="Search history">
+            </div>
+            <div class="history-list" id="historyList" role="list">
+                <!-- History items will be dynamically added here -->
+            </div>
+        </aside>
+
+        <!-- Help Modal -->
+        <div class="modal-overlay hidden" id="helpModal" aria-label="Help and keyboard shortcuts">
+            <div class="modal" role="dialog" aria-labelledby="helpTitle">
+                <div class="modal-header">
+                    <h2 id="helpTitle">Keyboard Shortcuts</h2>
+                    <button class="modal-close" id="closeHelpBtn" aria-label="Close help">&times;</button>
+                </div>
+                <div class="modal-content">
+                    <div class="shortcut-section">
+                        <h3>Numbers and Operations</h3>
+                        <ul>
+                            <li><kbd>0-9</kbd> - Enter numbers</li>
+                            <li><kbd>+</kbd> - Addition</li>
+                            <li><kbd>-</kbd> - Subtraction</li>
+                            <li><kbd>*</kbd> - Multiplication</li>
+                            <li><kbd>/</kbd> - Division</li>
+                            <li><kbd>.</kbd> - Decimal point</li>
+                            <li><kbd>Enter</kbd> or <kbd>=</kbd> - Calculate</li>
+                        </ul>
+                    </div>
+                    <div class="shortcut-section">
+                        <h3>Control Functions</h3>
+                        <ul>
+                            <li><kbd>Escape</kbd> - Clear all</li>
+                            <li><kbd>Backspace</kbd> - Delete last digit</li>
+                            <li><kbd>Delete</kbd> - Clear entry</li>
+                        </ul>
+                    </div>
+                    <div class="shortcut-section">
+                        <h3>Memory Functions</h3>
+                        <ul>
+                            <li><kbd>Ctrl + M</kbd> - Store in memory</li>
+                            <li><kbd>Ctrl + R</kbd> - Recall memory</li>
+                            <li><kbd>Ctrl + L</kbd> - Clear memory</li>
+                            <li><kbd>Ctrl + P</kbd> - Add to memory</li>
+                        </ul>
+                    </div>
+                    <div class="shortcut-section">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><kbd>Ctrl + H</kbd> - Toggle history</li>
+                            <li><kbd>Tab</kbd> - Navigate buttons</li>
+                            <li><kbd>Space</kbd> - Activate focused button</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Theme Selector Modal -->
+        <div class="modal-overlay hidden" id="themeModal" aria-label="Theme selection">
+            <div class="modal" role="dialog" aria-labelledby="themeTitle">
+                <div class="modal-header">
+                    <h2 id="themeTitle">Choose Theme</h2>
+                    <button class="modal-close" id="closeThemeBtn" aria-label="Close theme selector">&times;</button>
+                </div>
+                <div class="modal-content">
+                    <div class="theme-grid">
+                        <button class="theme-option active" data-theme="default" aria-label="Default theme">
+                            <div class="theme-preview default-preview"></div>
+                            <span>Default</span>
+                        </button>
+                        <button class="theme-option" data-theme="dark" aria-label="Dark theme">
+                            <div class="theme-preview dark-preview"></div>
+                            <span>Dark</span>
+                        </button>
+                        <button class="theme-option" data-theme="blue" aria-label="Blue theme">
+                            <div class="theme-preview blue-preview"></div>
+                            <span>Blue</span>
+                        </button>
+                        <button class="theme-option" data-theme="green" aria-label="Green theme">
+                            <div class="theme-preview green-preview"></div>
+                            <span>Green</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Messages -->
+        <div class="status-message hidden" id="statusMessage" aria-live="polite" aria-atomic="true">
+            <!-- Status messages will appear here -->
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div class="loading-overlay hidden" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p>Loading calculator...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
