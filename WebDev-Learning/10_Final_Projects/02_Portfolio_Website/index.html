@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="John Doe - Web Developer Portfolio. Showcasing modern web development skills with HTML, CSS, and JavaScript.">
+    <meta name="keywords" content="web developer, portfolio, HTML, CSS, JavaScript, frontend">
+    <meta name="author" content="John Doe">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://johndoe-portfolio.com/">
+    <meta property="og:title" content="John Doe - Web Developer Portfolio">
+    <meta property="og:description" content="Showcasing modern web development skills with HTML, CSS, and JavaScript.">
+    <meta property="og:image" content="./assets/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://johndoe-portfolio.com/">
+    <meta property="twitter:title" content="John Doe - Web Developer Portfolio">
+    <meta property="twitter:description"
+        content="Showcasing modern web development skills with HTML, CSS, and JavaScript.">
+    <meta property="twitter:image" content="./assets/images/og-image.jpg">
+
+    <title>John Doe - Web Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+</head>
+
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation Header -->
+    <header class="header" id="header">
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="#home" class="nav-logo" aria-label="Home">
+                    <span class="logo-text">JD</span>
+                </a>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-background">
+                <div class="hero-pattern"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="hero-greeting">Hello, I'm</span>
+                        <span class="hero-name">John Doe</span>
+                        <span class="hero-role">Web Developer</span>
+                    </h1>
+                    <p class="hero-description">
+                        I create beautiful, responsive websites and web applications
+                        using modern technologies and best practices.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-wrapper">
+                        <img src="./assets/images/profile.jpg" alt="John Doe - Web Developer" class="profile-image">
+                        <div class="hero-decoration"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <a href="#about" class="scroll-indicator" aria-label="Scroll to about section">
+                    <span class="scroll-text">Scroll Down</span>
+                    <span class="scroll-arrow">↓</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="section-subtitle">Get to know me and my skills</p>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Hi there! I'm John Doe</h3>
+                        <p>
+                            I'm a passionate web developer with over 3 years of experience creating
+                            digital experiences that make a difference. I specialize in frontend
+                            development but also have experience with backend technologies.
+                        </p>
+                        <p>
+                            When I'm not coding, you can find me exploring new technologies,
+                            contributing to open source projects, or sharing knowledge with the
+                            developer community.
+                        </p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">3+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Client Satisfaction</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills">
+                        <h3>Technical Skills</h3>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Frontend</h4>
+                                <div class="skill-list">
+                                    <span class="skill-item">HTML5</span>
+                                    <span class="skill-item">CSS3</span>
+                                    <span class="skill-item">JavaScript</span>
+                                    <span class="skill-item">React</span>
+                                    <span class="skill-item">Vue.js</span>
+                                    <span class="skill-item">Sass</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Backend</h4>
+                                <div class="skill-list">
+                                    <span class="skill-item">Node.js</span>
+                                    <span class="skill-item">Express</span>
+                                    <span class="skill-item">MongoDB</span>
+                                    <span class="skill-item">PostgreSQL</span>
+                                    <span class="skill-item">REST APIs</span>
+                                    <span class="skill-item">GraphQL</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Tools</h4>
+                                <div class="skill-list">
+                                    <span class="skill-item">Git</span>
+                                    <span class="skill-item">Webpack</span>
+                                    <span class="skill-item">Docker</span>
+                                    <span class="skill-item">AWS</span>
+                                    <span class="skill-item">Figma</span>
+                                    <span class="skill-item">VS Code</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">My Projects</h2>
+                    <p class="section-subtitle">A showcase of my recent work</p>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card" data-project="ecommerce">
+                        <div class="project-image">
+                            <img src="./assets/images/projects/project1.jpg" alt="E-commerce Platform" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="project-btn" data-action="view">View Details</button>
+                                <a href="#" class="project-btn" target="_blank" rel="noopener">Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">E-commerce Platform</h3>
+                            <p class="project-description">
+                                A full-stack e-commerce solution with React, Node.js, and MongoDB.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project="weather">
+                        <div class="project-image">
+                            <img src="./assets/images/projects/project2.jpg" alt="Weather Dashboard" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="project-btn" data-action="view">View Details</button>
+                                <a href="#" class="project-btn" target="_blank" rel="noopener">Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Weather Dashboard</h3>
+                            <p class="project-description">
+                                A responsive weather app with location services and 7-day forecasts.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">API Integration</span>
+                                <span class="tech-tag">CSS Grid</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-project="task">
+                        <div class="project-image">
+                            <img src="./assets/images/projects/project3.jpg" alt="Task Management App" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="project-btn" data-action="view">View Details</button>
+                                <a href="#" class="project-btn" target="_blank" rel="noopener">Live Demo</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Task Management App</h3>
+                            <p class="project-description">
+                                A collaborative task management tool with real-time updates.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">WebSocket</span>
+                                <span class="tech-tag">Express</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's work together on your next project</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Let's talk about your project</h3>
+                        <p>
+                            I'm always excited to take on new challenges and collaborate
+                            with amazing people. Drop me a message and let's create
+                            something incredible together!
+                        </p>
+
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <span class="contact-icon">📧</span>
+                                <div class="contact-details">
+                                    <h4>Email</h4>
+                                    <a href="mailto:john@example.com">john@example.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <span class="contact-icon">📱</span>
+                                <div class="contact-details">
+                                    <h4>Phone</h4>
+                                    <a href="tel:+1234567890">+1 (234) 567-890</a>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <span class="contact-icon">📍</span>
+                                <div class="contact-details">
+                                    <h4>Location</h4>
+                                    <span>San Francisco, CA</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="GitHub">
+                                <span class="social-icon">GitHub</span>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <span class="social-icon">LinkedIn</span>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <span class="social-icon">Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name *</label>
+                            <input type="text" id="name" name="name" class="form-input" required
+                                aria-describedby="name-error">
+                            <span class="form-error" id="name-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" required
+                                aria-describedby="email-error">
+                            <span class="form-error" id="email-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject *</label>
+                            <input type="text" id="subject" name="subject" class="form-input" required
+                                aria-describedby="subject-error">
+                            <span class="form-error" id="subject-error"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea id="message" name="message" class="form-input form-textarea" rows="5" required
+                                aria-describedby="message-error"></textarea>
+                            <span class="form-error" id="message-error"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loader hidden">Sending...</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 John Doe. All rights reserved.</p>
+                    <p>Built with ❤️ using HTML, CSS, and JavaScript</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+            <div class="modal-content" id="modalContent">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner hidden" id="loadingSpinner">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

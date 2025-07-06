@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App - Final Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="title">
+                <span class="title-icon">📝</span>
+                My Todo List
+            </h1>
+            <p class="subtitle">Stay organized and productive</p>
+        </header>
+
+        <!-- Todo Input Section -->
+        <section class="todo-input-section">
+            <form class="todo-form" id="todoForm">
+                <div class="input-group">
+                    <input type="text" id="todoInput" class="todo-input" placeholder="What needs to be done?"
+                        maxlength="100" required aria-label="Enter new todo item">
+                    <button type="submit" class="add-btn" aria-label="Add new todo">
+                        <span class="add-icon">+</span>
+                    </button>
+                </div>
+                <div class="input-counter">
+                    <span id="charCounter">0/100 characters</span>
+                </div>
+            </form>
+        </section>
+
+        <!-- Todo Controls Section -->
+        <section class="todo-controls" id="todoControls">
+            <div class="controls-left">
+                <span class="todo-count" id="todoCount">0 items left</span>
+            </div>
+            <div class="controls-center">
+                <div class="filter-buttons" role="group" aria-label="Filter todos">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+            </div>
+            <div class="controls-right">
+                <button class="clear-btn" id="clearCompleted">Clear Completed</button>
+            </div>
+        </section>
+
+        <!-- Todo List Section -->
+        <section class="todo-list-section">
+            <ul class="todo-list" id="todoList" role="list">
+                <!-- Todo items will be dynamically added here -->
+            </ul>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState">
+                <div class="empty-icon">🎯</div>
+                <h3>No todos yet!</h3>
+                <p>Add your first todo above to get started.</p>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <p>
+                <strong>Instructions:</strong>
+                Click to complete • Double-click to edit • Use filters to organize
+            </p>
+            <p class="footer-note">
+                Your todos are automatically saved locally
+            </p>
+        </footer>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal-overlay" id="editModal">
+        <div class="modal">
+            <h3>Edit Todo</h3>
+            <form id="editForm">
+                <input type="text" id="editInput" class="edit-input" maxlength="100" required>
+                <div class="modal-actions">
+                    <button type="button" class="cancel-btn" id="cancelEdit">Cancel</button>
+                    <button type="submit" class="save-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal-overlay" id="confirmModal">
+        <div class="modal">
+            <h3>Confirm Action</h3>
+            <p id="confirmMessage">Are you sure you want to perform this action?</p>
+            <div class="modal-actions">
+                <button type="button" class="cancel-btn" id="cancelConfirm">Cancel</button>
+                <button type="button" class="confirm-btn" id="confirmAction">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
