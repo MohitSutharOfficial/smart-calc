@@ -1,0 +1,286 @@
+/* JavaScript Basics - Styling for Interactive Examples */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Sections */
+.section {
+    background: white;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+}
+
+.section h2 {
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Demo Areas */
+.demo-area {
+    background: #f7fafc;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+/* Form Elements */
+input[type="text"],
+input[type="number"],
+select {
+    padding: 0.75rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin: 0.5rem;
+    transition: border-color 0.3s ease;
+    min-width: 150px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.interactive-btn {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    min-width: 150px;
+}
+
+.interactive-btn:hover {
+    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+}
+
+/* Output Areas */
+.output {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 1rem;
+    min-height: 60px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    color: #2d3748;
+    transition: all 0.3s ease;
+}
+
+.output:not(:empty) {
+    border-color: #667eea;
+    background: #edf2f7;
+}
+
+/* Calculator Specific Styles */
+.calculator {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.calculator input,
+.calculator select {
+    margin: 0;
+}
+
+/* Todo List Styles */
+.todo-list {
+    background: white;
+    border-radius: 6px;
+    margin: 1rem 0;
+    padding: 0;
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.todo-list li {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    background: #f7fafc;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.todo-list li:hover {
+    background: #edf2f7;
+}
+
+.todo-list li:last-child {
+    border-bottom: none;
+}
+
+/* Date/Time and Random Number Styles */
+label {
+    display: inline-block;
+    margin: 0.5rem;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+/* Info Text */
+.info {
+    background: #fef5e7;
+    border: 1px solid #f6ad55;
+    color: #744210;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* Footer */
+.footer {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+/* Animation for dynamic content */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease;
+}
+
+/* Success and Error States */
+.success {
+    color: #38a169;
+    font-weight: bold;
+}
+
+.error {
+    color: #e53e3e;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .section {
+        padding: 1rem;
+    }
+
+    .calculator {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .calculator input,
+    .calculator select,
+    .calculator button {
+        margin: 0.25rem 0;
+        width: 100%;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        min-width: 100%;
+        margin: 0.25rem 0;
+    }
+
+    button {
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+}

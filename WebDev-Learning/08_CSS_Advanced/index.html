@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Advanced - WebDev Learning</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- CSS Grid Layout Demo -->
+    <div class="layout-container">
+
+        <!-- Header -->
+        <header class="site-header">
+            <nav class="navigation">
+                <h1 class="logo">CSS Advanced</h1>
+                <ul class="nav-menu">
+                    <li><a href="#variables">CSS Variables</a></li>
+                    <li><a href="#grid">Grid Layout</a></li>
+                    <li><a href="#animations">Animations</a></li>
+                    <li><a href="#modern">Modern CSS</a></li>
+                </ul>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                    🌙
+                </button>
+            </nav>
+        </header>
+
+        <!-- Hero Section with CSS Grid -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Advanced CSS Techniques</h1>
+                <p class="hero-subtitle">Master modern CSS features, layouts, and advanced styling techniques</p>
+                <button class="cta-button">Explore Advanced CSS</button>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                    <div class="shape shape-4"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- CSS Variables Section -->
+            <section id="variables" class="content-section">
+                <h2 class="section-title">CSS Custom Properties (Variables)</h2>
+                <p class="section-description">
+                    CSS variables allow you to store and reuse values throughout your stylesheet,
+                    making maintenance easier and enabling dynamic theming.
+                </p>
+
+                <div class="demo-grid">
+                    <div class="demo-card variable-demo">
+                        <h3>Color System with Variables</h3>
+                        <div class="color-palette">
+                            <div class="color-swatch primary" data-color="Primary"></div>
+                            <div class="color-swatch secondary" data-color="Secondary"></div>
+                            <div class="color-swatch accent" data-color="Accent"></div>
+                            <div class="color-swatch success" data-color="Success"></div>
+                            <div class="color-swatch warning" data-color="Warning"></div>
+                            <div class="color-swatch error" data-color="Error"></div>
+                        </div>
+                        <div class="code-example">
+                            :root {
+                            --primary: hsl(240, 100%, 60%);
+                            --secondary: hsl(300, 100%, 60%);
+                            --accent: hsl(60, 100%, 60%);
+                            }
+
+                            .primary { background: var(--primary); }
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Dynamic Variable Updates</h3>
+                        <div class="variable-controls">
+                            <label>
+                                Hue:
+                                <input type="range" id="hue-slider" min="0" max="360" value="240"
+                                    oninput="updatePrimaryHue(this.value)">
+                                <span id="hue-value">240</span>
+                            </label>
+                            <label>
+                                Saturation:
+                                <input type="range" id="sat-slider" min="0" max="100" value="100"
+                                    oninput="updatePrimarySat(this.value)">
+                                <span id="sat-value">100%</span>
+                            </label>
+                            <div class="dynamic-demo-box">
+                                Dynamic Color Box
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Grid Advanced Section -->
+            <section id="grid" class="content-section">
+                <h2 class="section-title">Advanced CSS Grid</h2>
+                <p class="section-description">
+                    CSS Grid provides powerful two-dimensional layout capabilities with precise control
+                    over placement and sizing of elements.
+                </p>
+
+                <div class="grid-demos">
+                    <!-- Masonry-like Grid -->
+                    <div class="demo-card">
+                        <h3>Masonry-Style Grid</h3>
+                        <div class="masonry-grid">
+                            <div class="masonry-item item-1">
+                                <h4>Grid Item 1</h4>
+                                <p>Short content</p>
+                            </div>
+                            <div class="masonry-item item-2">
+                                <h4>Grid Item 2</h4>
+                                <p>Medium length content that spans multiple lines to demonstrate the masonry effect in
+                                    CSS Grid.</p>
+                            </div>
+                            <div class="masonry-item item-3">
+                                <h4>Grid Item 3</h4>
+                                <p>Another item</p>
+                            </div>
+                            <div class="masonry-item item-4">
+                                <h4>Grid Item 4</h4>
+                                <p>Longer content that demonstrates how CSS Grid can handle varying content heights in a
+                                    masonry-style layout. This creates an interesting visual flow.</p>
+                            </div>
+                            <div class="masonry-item item-5">
+                                <h4>Grid Item 5</h4>
+                                <p>Compact content</p>
+                            </div>
+                            <div class="masonry-item item-6">
+                                <h4>Grid Item 6</h4>
+                                <p>Final grid item with medium content length.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Complex Grid Layout -->
+                    <div class="demo-card">
+                        <h3>Complex Grid Layout</h3>
+                        <div class="complex-grid">
+                            <div class="grid-header">Header</div>
+                            <div class="grid-sidebar">Sidebar</div>
+                            <div class="grid-main">Main Content</div>
+                            <div class="grid-aside">Aside</div>
+                            <div class="grid-footer">Footer</div>
+                        </div>
+                        <div class="code-example">
+                            .complex-grid {
+                            display: grid;
+                            grid-template-areas:
+                            "header header header"
+                            "sidebar main aside"
+                            "footer footer footer";
+                            grid-template-columns: 200px 1fr 150px;
+                            grid-template-rows: auto 1fr auto;
+                            }
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Advanced Animations Section -->
+            <section id="animations" class="content-section">
+                <h2 class="section-title">Advanced Animations & Transitions</h2>
+                <p class="section-description">
+                    Modern CSS animation techniques including keyframes, transforms, and performance-optimized
+                    animations.
+                </p>
+
+                <div class="animation-demos">
+                    <div class="demo-card">
+                        <h3>Morphing Loader</h3>
+                        <div class="loader-container">
+                            <div class="morphing-loader"></div>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>3D Card Flip</h3>
+                        <div class="card-flip-container">
+                            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <h4>Front Side</h4>
+                                        <p>Click to flip</p>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h4>Back Side</h4>
+                                        <p>Flipped!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Parallax Scrolling</h3>
+                        <div class="parallax-container">
+                            <div class="parallax-layer parallax-back"></div>
+                            <div class="parallax-layer parallax-mid"></div>
+                            <div class="parallax-layer parallax-front">
+                                <h4>Parallax Text</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Particle Animation</h3>
+                        <div class="particle-container">
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                            <div class="particle"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Modern CSS Features Section -->
+            <section id="modern" class="content-section">
+                <h2 class="section-title">Modern CSS Features</h2>
+                <p class="section-description">
+                    Explore cutting-edge CSS features including container queries, aspect-ratio,
+                    logical properties, and more.
+                </p>
+
+                <div class="modern-demos">
+                    <div class="demo-card">
+                        <h3>Container Queries</h3>
+                        <div class="container-query-demo">
+                            <div class="responsive-card">
+                                <h4>Responsive Card</h4>
+                                <p>This card adapts based on its container size, not the viewport size.</p>
+                                <button>Action</button>
+                            </div>
+                        </div>
+                        <div class="resize-handle" onmousedown="startResize(event)">
+                            Drag to resize →
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Aspect Ratio</h3>
+                        <div class="aspect-ratio-demo">
+                            <div class="aspect-box ratio-16-9">
+                                <span>16:9</span>
+                            </div>
+                            <div class="aspect-box ratio-4-3">
+                                <span>4:3</span>
+                            </div>
+                            <div class="aspect-box ratio-1-1">
+                                <span>1:1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Scroll Snap</h3>
+                        <div class="scroll-snap-container">
+                            <div class="snap-item snap-1">Section 1</div>
+                            <div class="snap-item snap-2">Section 2</div>
+                            <div class="snap-item snap-3">Section 3</div>
+                            <div class="snap-item snap-4">Section 4</div>
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>CSS Shapes</h3>
+                        <div class="shapes-demo">
+                            <div class="text-wrap-demo">
+                                <div class="shape-float"></div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CSS Architecture Section -->
+            <section class="content-section">
+                <h2 class="section-title">CSS Architecture & Methodologies</h2>
+                <div class="architecture-demos">
+                    <div class="demo-card">
+                        <h3>BEM Methodology</h3>
+                        <div class="bem-example">
+                            <div class="card">
+                                <div class="card__header">
+                                    <h4 class="card__title">BEM Example</h4>
+                                </div>
+                                <div class="card__body">
+                                    <p class="card__text">Block Element Modifier methodology</p>
+                                    <button class="card__button card__button--primary">Primary</button>
+                                    <button class="card__button card__button--secondary">Secondary</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="code-example">
+                            /* Block */
+                            .card { }
+
+                            /* Elements */
+                            .card__header { }
+                            .card__title { }
+                            .card__button { }
+
+                            /* Modifiers */
+                            .card__button--primary { }
+                            .card__button--secondary { }
+                        </div>
+                    </div>
+
+                    <div class="demo-card">
+                        <h3>Utility Classes</h3>
+                        <div class="utility-example">
+                            <div class="p-4 mb-2 bg-primary text-white rounded-lg">
+                                Utility-based styling
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="w-4 h-4 bg-success rounded-full"></div>
+                                <span class="text-sm text-gray-600">Status indicator</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <h3>CSS Resources</h3>
+                <ul class="resource-list">
+                    <li><a href="#" class="resource-link">CSS Grid Guide</a></li>
+                    <li><a href="#" class="resource-link">Flexbox Patterns</a></li>
+                    <li><a href="#" class="resource-link">Animation Performance</a></li>
+                    <li><a href="#" class="resource-link">Modern CSS Features</a></li>
+                </ul>
+
+                <div class="performance-tip">
+                    <h4>Performance Tip</h4>
+                    <p>Use transform and opacity for animations to trigger GPU acceleration and avoid layout thrashing.
+                    </p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <p>&copy; 2025 WebDev Learning - CSS Advanced Techniques</p>
+        </footer>
+    </div>
+
+    <!-- Color Mode Toggle Script -->
+    <script>
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark-theme');
+            const button = document.querySelector('.theme-toggle');
+            button.textContent = document.documentElement.classList.contains('dark-theme') ? '☀️' : '🌙';
+
+            // Save preference
+            localStorage.setItem('theme', document.documentElement.classList.contains('dark-theme') ? 'dark' : 'light');
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+            document.querySelector('.theme-toggle').textContent = '☀️';
+        }
+
+        // Dynamic CSS Variable Updates
+        function updatePrimaryHue(value) {
+            document.documentElement.style.setProperty('--primary-hue', value);
+            document.getElementById('hue-value').textContent = value;
+        }
+
+        function updatePrimarySat(value) {
+            document.documentElement.style.setProperty('--primary-sat', value + '%');
+            document.getElementById('sat-value').textContent = value + '%';
+        }
+
+        // Container Query Resize Demo
+        let isResizing = false;
+
+        function startResize(event) {
+            isResizing = true;
+            const container = document.querySelector('.container-query-demo');
+            const startX = event.clientX;
+            const startWidth = container.offsetWidth;
+
+            function handleMouseMove(e) {
+                if (!isResizing) return;
+                const newWidth = startWidth + (e.clientX - startX);
+                container.style.width = Math.max(200, Math.min(600, newWidth)) + 'px';
+            }
+
+            function handleMouseUp() {
+                isResizing = false;
+                document.removeEventListener('mousemove', handleMouseMove);
+                document.removeEventListener('mouseup', handleMouseUp);
+            }
+
+            document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('mouseup', handleMouseUp);
+        }
+    </script>
+</body>
+
+</html>
